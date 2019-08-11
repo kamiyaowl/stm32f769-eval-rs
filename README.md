@@ -127,3 +127,7 @@ to intervene to uphold that code of conduct.
 
 [CoC]: https://www.rust-lang.org/policies/code-of-conduct
 [team]: https://github.com/rust-embedded/wg#the-cortex-m-team
+
+## HALの設計参照
+
+* https://github.com/therealprof/stm32f767-hal

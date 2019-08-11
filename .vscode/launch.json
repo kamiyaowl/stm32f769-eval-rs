@@ -15,17 +15,6 @@
             "miDebuggerPath": "arm-none-eabi-gdb",
             "miDebuggerServerAddress": ":3333",
         },
-        {
-            "name": "GDB",
-            "type": "gdb",
-            "request": "launch",
-            "cwd": "${workspaceRoot}",
-            "target": "${workspaceRoot}/target/thumbv7em-none-eabihf/debug/stm32f769-eval-rs", 
-            "gdbpath" : "arm-none-eabi-gdb",
-            "autorun": [
-                "source openocd.gdb" 
-            ]
-        }
     ],
     "inputs": [
         {

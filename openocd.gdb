@@ -1,5 +1,7 @@
 target extended-remote :3333
 
+symbol-file target/thumbv7em-none-eabihf/debug/stm32f769-eval-rs
+
 # print demangled symbols
 set print asm-demangle on
 
