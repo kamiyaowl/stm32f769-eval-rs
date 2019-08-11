@@ -16,6 +16,18 @@ use stm32f7::stm32f7x9;
 fn main() -> ! {
     let mut peripherals = stm32f7x9::Peripherals::take().unwrap();
 
+    // LD0: RED   : PJ13
+    // LD1: GREEN : PJ5
+    // LD2: GREEN : PA12
+
+    // GPIO Clock(GPIOJ)
+    peripherals.RCC.ahb1enr.write(|w| unsafe { w.bits(0x1 << 9) });
+    // Mode Reg: ...Mode1[1:0], Mode0[1:0]
+    // input:00, output:01, alt func:10, analog:11
+    peripherals.GPIOJ.moder.write(|w| unsafe { w.bits((0x1 << (13*2)) | (0x1 << ( 5*2))) });
+    // Output Data Reg: ODR15[0]...ODR1[0], ODR0[0]
+    peripherals.GPIOJ.odr.write(|w| unsafe { w.bits((0x1 << 13) | (0x1 << 5)) });
+    
     loop {
         hprintln!("Hello stm32f7!").unwrap();
     }
